@@ -7,10 +7,12 @@ export class Match {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @ManyToOne(() => User)
+  // 👇 Añadimos onDelete: 'SET NULL' y nullable: true
+  @ManyToOne(() => User, { onDelete: 'SET NULL', nullable: true })
   winner: User;
 
-  @ManyToOne(() => User)
+  // 👇 Añadimos onDelete: 'SET NULL' y nullable: true
+  @ManyToOne(() => User, { onDelete: 'SET NULL', nullable: true })
   loser: User;
 
   @Column()

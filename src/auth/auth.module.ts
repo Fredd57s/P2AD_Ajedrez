@@ -7,12 +7,16 @@ import { AuthController } from './auth.controller';
 import { GoogleStrategy } from './google.strategy';
 import { AuthService } from './auth.service';
 import { UsersModule } from '../users/users.module'; 
+import { MailModule } from '../mail/mail.module';
+import { PaymentService } from './payment.service'; 
+import { PaymentController } from './payment.controller';
 
 @Module({
   imports: [
     UsersModule, 
     PassportModule,
-   
+    MailModule,
+    // 👇 Aquí solo van Módulos, quitamos Controller y Service de aquí
     JwtModule.registerAsync({
       imports: [ConfigModule],
       inject: [ConfigService],
@@ -22,7 +26,14 @@ import { UsersModule } from '../users/users.module';
       }),
     }),
   ],
-  controllers: [AuthController],
-  providers: [GoogleStrategy, AuthService],
+  controllers: [
+    AuthController,
+    PaymentController // 👈 El controlador va estrictamente aquí
+  ],
+  providers: [
+    GoogleStrategy, 
+    AuthService,
+    PaymentService // 👈 El servicio va estrictamente aquí
+  ],
 })
 export class AuthModule {}

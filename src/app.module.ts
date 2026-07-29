@@ -7,9 +7,13 @@ import { GameModule } from './game/game.module';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import { MatchesModule } from './matches/matches.module';
+import { ScheduleModule } from '@nestjs/schedule';
+import { MailModule } from './mail/mail.module'; 
+import { EventEmitterModule } from '@nestjs/event-emitter';
 
 @Module({
   imports: [
+    EventEmitterModule.forRoot(),
     ConfigModule.forRoot({ isGlobal: true }),
     TypeOrmModule.forRoot({
       type: 'mysql',
@@ -18,9 +22,16 @@ import { MatchesModule } from './matches/matches.module';
       username: process.env.DB_USER,
       password: process.env.DB_PASSWORD,
       database: process.env.DB_NAME,
-      autoLoadEntities: true, 
-      synchronize: true,
+      entities: [__dirname + '/**/*.entity{.ts,.js}'],
+      synchronize: true, // 👈 NestJS creará todas las tablas por ti al conectarse
+      
+      // 👇 AÑADE ESTO PARA QUE LA NUBE TE DEJE ENTRAR
+      ssl: {
+        rejectUnauthorized: false,
+      },
     }),
+    ScheduleModule.forRoot(),
+    MailModule,
     GameModule,
     UsersModule,
     AuthModule,
