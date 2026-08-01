@@ -23,38 +23,48 @@ El sistema requiere la instalación de diversas herramientas para funcionar adec
 
 La plataforma utiliza variables de entorno para resguardar la información sensible. El directorio principal del backend contiene un archivo referencial llamado .env.example. Debes crear un archivo nuevo nombrado exactamente .env y completar los valores con tus configuraciones locales.
 
-Contenido de ejemplo para el archivo .env del servidor:
+Contenido de ejemplo para el archivo .env del servidor backend:
 
-Plaintext
+# --- BASE DE DATOS MYSQL ---
+DB\_HOST=mysql...
+DB\_PORT=11111
+DB\_USER=user
+DB\_PASSWORD=password
+DB\_NAME=dbname
 
-DB\_HOST=localhost
+# --- GOOGLE OAUTH 2.0 ---
+GOOGLE\_CLIENT\_ID=345678908765
+GOOGLE\_CLIENT\_SECRET=bhjbiuh89uiub
+GOOGLE\_CALLBACK\_URL=http://localhost
 
-DB\_PORT=3306
+# --- SEGURIDAD JWT Y FRONTEND ---
+JWT\_SECRET=SECRET
+FRONTEND\_URL=http://localhost
 
-DB\_USER=root
+GMAIL_USER=correo@gmail.com
+GMAIL_PASS=xxxx xxxx xxxx xxxx
 
-DB\_PASSWORD=tu\_contrasena\_de\_mysql
+PAYPAL\_CLIENT\_ID=234567890hjbjhbj
+PAYPAL\_CLIENT\_SECRET=kbhiuhgiug9gh89g89g8vb89
+PAYPAL\_BASE\_URL=https://api-m.sandbox.paypal.com
 
-DB\_NAME=chess\_db
+Contenido de ejemplo para el archivo .env del servidor frontend:
 
-JWT\_SECRET=tu\_clave\_secreta\_para\_firmar\_tokens
-
-GOOGLE\_CLIENT\_ID=tu\_cliente\_id\_generado\_en\_google
-
-GOOGLE\_CLIENT\_SECRET=tu\_secreto\_generado\_en\_google
+VITE\_PAYPAL\_CLIENT\_ID=r3fcefrewfc3rcferfr
+VITE\_BACKEND\_URL=http://localhost
 
 **Instrucciones de instalación y ejecución**
 
-Sigue estos pasos ordenados para inicializar el proyecto completo sin inconvenientes.
-
-1. Descarga el código del repositorio hacia tu máquina local.
-1. Abre tu gestor de base de datos MySQL y crea un esquema vacío nombrado chess\_db.
-1. Abre una terminal de comandos y navega hacia la carpeta del backend.
-1. Genera el archivo .env basándote en el ejemplo mostrado anteriormente.
-1. Ejecuta el comando npm install para descargar todas las dependencias lógicas.
-1. Inicia el servidor central ingresando el comando npm run start:dev.
-1. Abre una segunda terminal de comandos y navega hacia la carpeta del frontend.
-1. Ejecuta nuevamente npm install para incorporar las librerías visuales requeridas.
-1. Levanta el entorno gráfico ejecutando el comando npm run dev.
-1. Ingresa a la dirección local expuesta en la consola del frontend para comenzar a navegar por la aplicación.
-
+1. Sigue estos pasos ordenados para inicializar el proyecto completo sin inconvenientes.
+2. Descarga el código del repositorio hacia tu máquina local.
+3. Abre tu gestor de base de datos MySQL y crea un esquema vacío nombrado chess_db.
+4. Asegúrate de que el servicio de Ollama esté encendido y tenga el modelo llama3 descargado (ollama run llama3).
+5. Abre una terminal de comandos y navega hacia la carpeta del backend.
+6. Genera el archivo .env basándote en el ejemplo del servidor mostrado anteriormente.
+7. Ejecuta el comando npm install para descargar todas las dependencias lógicas.
+8. Inicia el servidor central ingresando el comando npm run start:dev.
+9. Abre una segunda terminal de comandos y navega hacia la carpeta del frontend.
+10. Genera el archivo .env basándote en el ejemplo del frontend.
+11. Ejecuta nuevamente npm install para incorporar las librerías visuales requeridas.
+12. Levanta el entorno gráfico ejecutando el comando npm run dev.
+13. Ingresa a la dirección local expuesta en la consola del frontend para comenzar a navegar por la aplicación.
