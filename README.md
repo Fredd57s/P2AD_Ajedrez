@@ -26,32 +26,32 @@ La plataforma utiliza variables de entorno para resguardar la información sensi
 Contenido de ejemplo para el archivo .env del servidor backend:
 
 # --- BASE DE DATOS MYSQL ---
-DB\_HOST=mysql...
-DB\_PORT=11111
-DB\_USER=user
-DB\_PASSWORD=password
-DB\_NAME=dbname
+DB\_HOST=mysql...<br>
+DB\_PORT=11111<br>
+DB\_USER=user<br>
+DB\_PASSWORD=password<br>
+DB\_NAME=dbname<br>
 
 # --- GOOGLE OAUTH 2.0 ---
-GOOGLE\_CLIENT\_ID=345678908765
-GOOGLE\_CLIENT\_SECRET=bhjbiuh89uiub
-GOOGLE\_CALLBACK\_URL=http://localhost
+GOOGLE\_CLIENT\_ID=345678908765<br>
+GOOGLE\_CLIENT\_SECRET=bhjbiuh89uiub<br>
+GOOGLE\_CALLBACK\_URL=http://localhost<br>
 
 # --- SEGURIDAD JWT Y FRONTEND ---
-JWT\_SECRET=SECRET
-FRONTEND\_URL=http://localhost
+JWT\_SECRET=SECRET<br>
+FRONTEND\_URL=http://localhost<br>
 
-GMAIL_USER=correo@gmail.com
-GMAIL_PASS=xxxx xxxx xxxx xxxx
+GMAIL_USER=correo@gmail.com<br>
+GMAIL_PASS=xxxx xxxx xxxx xxxx<br>
 
-PAYPAL\_CLIENT\_ID=234567890hjbjhbj
-PAYPAL\_CLIENT\_SECRET=kbhiuhgiug9gh89g89g8vb89
-PAYPAL\_BASE\_URL=https://api-m.sandbox.paypal.com
+PAYPAL\_CLIENT\_ID=234567890hjbjhbj<br>
+PAYPAL\_CLIENT\_SECRET=kbhiuhgiug9gh89g89g8vb89<br>
+PAYPAL\_BASE\_URL=https://api-m.sandbox.paypal.com<br>
 
 Contenido de ejemplo para el archivo .env del servidor frontend:
 
-VITE\_PAYPAL\_CLIENT\_ID=r3fcefrewfc3rcferfr
-VITE\_BACKEND\_URL=http://localhost
+VITE\_PAYPAL\_CLIENT\_ID=r3fcefrewfc3rcferfr<br>
+VITE\_BACKEND\_URL=http://localhost<br>
 
 **Instrucciones de instalación y ejecución**
 
